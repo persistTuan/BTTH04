@@ -10,7 +10,7 @@
             if(isset($_POST['submit_SachLuuLai'])){
                 $sachService = new SachService();
                 $check = $sachService->UpdateSach(new Sach($_POST['tenSach'], $_POST['namXuatBan'], $_POST['idTacGia'], $_POST['id']));
-                $message = $check?"success":"error";
+                $message = $check?"success":"lỗi không có idTacGia nào hoặc sai định dạng năm xuất bản yyyy/mm/tt";
                 $type = $check?"success":"danger";
                 header("location:http://localhost/BTTH04/public/index.php?message=$message&type=$type");exit();
             }
@@ -68,17 +68,19 @@
                 echo "Bạn chưa thực hiện inserting";
             }
         }
-        // public function insertTheLoai(){
-        //     if(isset($_POST['submit_insertTheLoai'])){
-        //         $theLoaiService = new TheLoaiService();
-        //         $check = $theLoaiService->InserTheLoai( new TheLoai($_POST['tenTheLoai']) );
-        //         $mes = $check?"success":"error";
-        //         header("location:http://localhost/BTTH03/public/theLoai.php?mes=$mes");exit();
-        //     }
-        //     else{
-        //         echo "Bạn chưa thực hiện inserting";
-        //     }
-        // }
+        public function insertTacGia(){
+            if(isset($_POST['submit_insertTacGia'])){
+                $tacGiaService = new TacGiaService();
+                $check = $tacGiaService->InsertTacGia( new TacGia($_POST['tenTacGia']) );
+                $mes = $check?"success":"error";
+                $message = $check?"success":"lỗi không có idTacGia nào hoặc sai định dạng năm xuất bản yyyy/mm/tt";
+                $type = $check?"success":"danger";
+                header("location:http://localhost/BTTH04/public/index.php?action=tacGia&message=$message&type=$type");exit();
+            }
+            else{
+                echo "Bạn chưa thực hiện inserting";
+            }
+        }
     }
 
     

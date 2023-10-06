@@ -26,6 +26,6 @@
             return MySql::Insert("INSERT INTO sach(tensach, namXuatBan, idTacGia) VALUES ('$tenSach', '$namXuatBan', '$idTacGia')");
         }
         public function DeleteSach($id){
-            return MySql::Delete("delete from sach where id = '$id)'");
+            return MySql::Delete("delete from sach where id = '$id'");
         }
     }

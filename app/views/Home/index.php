@@ -24,9 +24,9 @@
             <thead>
                 <tr>
                     <th scope="col">#ID</th>
-                    <th scope="col">Tên Bài Hát</th>
-                    <th scope="col">Ca Sĩ</th>
-                    <th scope="col">Thể Loại</th>
+                    <th scope="col">Tên Sách</th>
+                    <th scope="col">Nẵm Xuất bản</th>
+                    <th scope="col">Id Tác Giả</th>
                     <th scope="col">Sửa</th>
                     <th scope="col">Xóa</th>
                 </tr>

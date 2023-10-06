@@ -9,44 +9,58 @@ error_reporting(E_ALL);
             if(!isset($query)){
                 return false;
             }
-            self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
-            $result = self::$pdo->prepare($query);
-            $result->execute();
-            $numberEffect = $result->rowCount();
-            $pdo = null;
-            if($numberEffect > 0){
-                return true;
+            try{
+                self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
+                $result = self::$pdo->prepare($query);
+                $result->execute();
+                $numberEffect = $result->rowCount();
+                $pdo = null;
+                if($numberEffect > 0){
+                    return true;
+                }
+                return false;
+            }catch(Exception $e){
+                return false;
             }
-            return false;
+            
         }
         public static function Update(string $sql){
-            self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
-            $result = self::$pdo->prepare($sql);
-            $result->execute();
-            $numberEffect = $result->rowCount();
-            $pdo = null;
-            if($numberEffect > 0) {
-                return true;
+            try{
+                self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
+                $result = self::$pdo->prepare($sql);
+                $result->execute();
+                $numberEffect = $result->rowCount();
+                $pdo = null;
+                if($numberEffect > 0) {
+                    return true;
+                }
+                return false;
+            }catch(Exception $e){
+                return false;
             }
-            return false;
+           
         }
 
         public static function select($query = null) {
             if(!isset($query)){
                 return false;
             }
-            self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
-            $result = self::$pdo->prepare($query);
-            $result->execute();
-            $numberEffect = $result->rowCount();
-            if($numberEffect > 0) {
-                return $result->fetchAll();
-            }
-            else{
-                $pdo = null;
+
+            try{
+                self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
+                $result = self::$pdo->prepare($query);
+                $result->execute();
+                $numberEffect = $result->rowCount();
+                if($numberEffect > 0) {
+                    return $result->fetchAll();
+                }
+                else{
+                    $pdo = null;
+                    return false;
+                }
+            }catch(Exception $e){
                 return false;
             }
-            
 
         }
         
@@ -54,28 +68,38 @@ error_reporting(E_ALL);
             if($query == null){
                 return false;
             }
-            self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
-            $result = self::$pdo->prepare($query);
-            $result->execute();
-            $numberEffect = $result->rowCount();
-            if($numberEffect > 0) {
-                return true;
+            try{
+                self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
+                $result = self::$pdo->prepare($query);
+                $result->execute();
+                $numberEffect = $result->rowCount();
+                if($numberEffect > 0) {
+                    return true;
+                }
+                return false;
+            }catch(Exception $e){
+                return false;
             }
-            return false;
+           
         }
 
         public static function Insert($query = null){
             if($query == null){
                 return false;
             }
-            self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
-            $result = self::$pdo->prepare($query);
-            $result->execute();
-            $numberEffect = $result->rowCount();
-            if($numberEffect > 0) {
-                return true;
+            try{
+                self::$pdo = new PDO("mysql:host=127.0.0.1:3307; dbname=quanlithuvien", "root", "140103");
+                $result = self::$pdo->prepare($query);
+                $result->execute();
+                $numberEffect = $result->rowCount();
+                if($numberEffect > 0) {
+                    return true;
+                }
+                return false;
+            }catch(Exception $e){
+                return false;
             }
-            return false;
+           
         }
     }
 ?>

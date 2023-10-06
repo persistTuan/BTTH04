@@ -28,7 +28,7 @@
                 </div>
                 <div class="buttton"> 
                     <a class="btn btn-warning float-end" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/public/index.php?controller=HomeController&action=theLoai">Quay lại</a>
-                    <button name="submit_insertTheLoai" type="submit" class="btn-save btn btn-success float-end me-2" >Lưu lại</button>
+                    <button name="submit_insertTacGia" type="submit" class="btn-save btn btn-success float-end me-2" >Lưu lại</button>
                 </div>
             </form>
 
