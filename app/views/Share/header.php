@@ -4,10 +4,10 @@
         
         <ul class="nav">
             <li class="nav-item">
-                <a class="text-dark nav-link btn btn-light btn-trangChu" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH03/public/index.php">Trang chủ</a>
+                <a class="text-dark nav-link btn btn-light btn-trangChu" aria-current="page" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/public/index.php">Trang chủ</a>
             </li>
             <li class="nav-item">
-                <a class="text-dark nav-link btn btn-light btn-dangNhap" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH03/public/index.php?action=theLoai">Quanr lí Thể Loại</a>
+                <a class="text-dark nav-link btn btn-light btn-dangNhap" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/public/index.php?action=tacGia">Admin</a>
             </li>
         </ul>
     </div>

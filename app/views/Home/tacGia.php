@@ -14,7 +14,7 @@
     <?php include "{$_SERVER['DOCUMENT_ROOT']}/BTTH04/app/views/Share/header.php"; ?>
 
     <div class="menu">
-        <a class="btn btn-success" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/app/views/Admin/insertSach.php">Thêm mới</a>
+        <a class="btn btn-success" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/app/views/Admin/insertTacGia.php">Thêm mới</a>
         <?php
         if (isset($_GET['message'])) :
         ?>
@@ -24,31 +24,25 @@
             <thead>
                 <tr>
                     <th scope="col">#ID</th>
-                    <th scope="col">Tên Bài Hát</th>
-                    <th scope="col">Ca Sĩ</th>
-                    <th scope="col">Thể Loại</th>
+                    <th scope="col">Tên Tác Giả</th>
                     <th scope="col">Sửa</th>
                     <th scope="col">Xóa</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                    foreach ($dataSachs as $dataSach) :
-                        $id = $dataSach->getId();
-                        $tenSach = $dataSach->getTenSach();
-                        $namXuatBan = $dataSach->getNamXuatBan();
-                        $idTacGia = $dataSach->getIdTacGia();
+                    foreach ($dataTacGias as $dataTacGia) :
+                        $id = $dataTacGia->getId();
+                        $tenTacGia = $dataTacGia->getTenTacGia();
                         // $href_edit_category = "{$_SERVER['DOCUMENT_ROOT']}/BTTH03/controller/AdminController/AdminController.php?controller=AdminController&action=EditBaiHat";
                         // $href_delete_category = "{$_SERVER['DOCUMENT_ROOT']}/BTTH03/AdminController.php?controller=AdminController&action=DeleteBaiHat";
-                        $token = array('id'=>$id,'tenSach'=>$tenSach, 'namXuatBan'=>$namXuatBan, 'idTacGia'=>$dataSach->getidTacGia());   
+                        $token = array('id'=>$id,'tenTacGia'=>$tenTacGia);   
                         $json_token = json_encode($token); 
                 ?>
                     <tr>
                         <td scope="row"><?= $id ?></td>
-                        <td scope="row"><?= $tenSach ?></td>
-                        <td scope="row"><?= $namXuatBan ?></td>
-                        <td scope="row"><?= $idTacGia ?></td>
-                        <td scope="row"><a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/app/views/Admin/editSach.php?token=<?= urlencode($json_token); ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <td scope="row"><?= $tenTacGia ?></td>
+                        <td scope="row"><a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/app/views/Admin/editTacGia.php?token=<?= urlencode($json_token); ?>"><i class="fa-solid fa-pen-to-square"></i></a></td>
                         <td scope="row"><button data-bs-toggle="modal" data-bs-target="#modalId<?= $id; ?>"><i class="fa-solid fa-trash"></i></button></td>
                     </tr>
 
@@ -67,7 +61,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/public/index.php?controller=AdminController&action=deleteSach&idSach=<?=$id?>" class="btn btn-primary">Delete</a>
+                                    <a href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/BTTH04/public/index.php?controller=AdminController&action=deleteTacGia&idTacGia=<?=$id?>"  class="btn btn-primary">Delete</a>
                                 </div>
                             </div>
                         </div>
